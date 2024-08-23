@@ -1,0 +1,66 @@
+/* 版心设置 */
+.container {
+    width: 1190px;
+    margin: 0 auto;
+    /* background-color: orange; */
+}
+
+/* #region顶部导航条start */
+
+/* 设置导航条部分的主样式 */
+.topbar {
+    height: 30px;
+    line-height: 30px;
+    background-color: #ECECEC;
+    color: #666;
+}
+
+/* 清除内部字体之间的空格 */
+.welcome {
+    font-size: 0;
+}
+
+/* 设置内部所有字体的统一大小 */
+.welcome span, .welcome a {
+    font-size: 12px;
+}
+
+/* 设置欢迎部分的右侧边距 */
+.welcome .greeting {
+    margin-right: 28px;
+}
+
+/* 设置登录和注册的样式 */
+.welcome .login {
+    padding-right: 10px;
+    border-right: 1px solid;
+}
+
+.welcome .register {
+    padding-left: 10px;
+}
+
+/* 每一个小列表项左侧浮动 */
+.topbar-nav .list li {
+    float: left;
+}
+
+/* 设置间距 */
+.topbar-nav .list li a {
+    padding-left: 15px;
+    padding-right: 15px;
+    border-right: 1px solid;
+}
+
+/* 清除第一个列表项左侧边距和最后一个的右侧边距和边框 */
+.topbar-nav .list li:first-child a {
+    padding-left: 0;
+}
+
+.topbar-nav .list li:last-child a {
+    padding-right: 0;
+    border: 0;
+}
+
+/* #endregion顶部导航条end */
+
