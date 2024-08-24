@@ -235,7 +235,7 @@
 .top-msg {
     height: 156px;
     width: 260px;
-    border: 1px solid;
+    border: 1px solid #D9D9D9;
     padding: 0 14px;
 }
 
@@ -364,6 +364,7 @@
 .seckill img{
     float: left;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 /* 去掉最后一个图片的右边距 */
@@ -372,3 +373,184 @@
 }
 /* #endregion秒杀区end */
 
+/* #region楼区start */
+
+/* 顶部 */
+.floor-bar {
+    height: 30px; /* 文字所在位置高度，不是整个盒子高度 */
+    line-height: 30px;
+    margin-top: 48px;
+    line-height: ;
+    border-bottom: 2px solid #DD302D;
+    padding-bottom: 4px;
+}
+
+.floor-bar .title {
+    font-size: 20px;
+    color:black;
+    font-weight: bold;
+}
+
+.floor-bar ul li{
+    font-size: 14px;
+    float: left;/* 使顶部每一个列表项左浮动 */
+}
+
+.floor-bar ul li a {
+    padding: 0 10px;
+}
+
+/* 取消第一个超链接的左边距 */
+.floor-bar ul li:first-child a {
+    padding-left: 0;
+}
+
+/* 底部 */
+.floor-list .item {
+    float: left;
+}
+
+/* 第一个广告区域 */
+.floor-list .item1 {
+    height: 392px;
+    width: 190px;
+    background-color: #F4F4F4;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 设置整个列表的下边距 */
+.floor-list .item1 ul {
+    margin-bottom: 30px;
+}
+
+/* 设置每一个列表项的样式 */
+.floor-list .item1 ul li {
+    font-size: 16px;
+    font-weight: bold;
+    width: 90px;
+    border-bottom: 1px solid #D9D9D9;
+    padding-bottom: 3.5px;
+}
+
+/* 设置奇数部分的左浮动 */
+.floor-list .item1 ul li:nth-child(2n - 1) {
+    float: left;
+}
+
+/* 设置偶数部分的右浮动 */
+.floor-list .item1 ul li:nth-child(2n) {
+    float: right;
+}
+
+/* 设置第二个的上下间距 */
+.floor-list .item1 ul li:nth-child(3),
+.floor-list .item1 ul li:nth-child(4){
+    margin: 14.4px 0;
+}
+
+/* 第二个广告区域 */
+.floor-list .item2 {
+    height: 432px;
+    width: 340px;
+    /* background-color: skyblue; */
+}
+
+/* 第三个广告区域 */
+.floor-list .item3 {
+    height: 430px;
+    width: 206px;
+    /* background-color: orange; */
+    border-right: 1px solid #ECECEC;
+}
+
+/* 第四个广告区域 */
+.floor-list .item4 {
+    height: 431px;
+    width: 206px;
+    /* background-color: greenyellow; */
+    border-right: 1px solid #ECECEC;
+}
+
+/* 第五个广告区域 */
+.floor-list .item5 {
+    height: 430px;
+    width: 206px;
+    /* background-color: purple; */
+}
+
+/* 设置出现底部边框的图片 */
+.floor-list .item3 img,
+.floor-list .item4 img, 
+.floor-list .item5 img {    
+    border-bottom: 1px solid #E2E2E2;
+}
+
+/* #endregion楼层区end */
+
+/* #region页脚区start */
+.footer {
+    height: 440px;
+    background-color: #483E3E;
+    margin-top: 49px;
+}
+
+/* 每一个列表样式 */
+.links-list{
+    width: 190px;
+    height: 176px;
+    float: left;
+    margin-top: 48px;
+    margin-bottom: 90px;
+}
+
+/* 每一个列表项样式 */
+.links-list li {
+    font-size: 14px;
+    margin: 5px 0;
+}
+.top-links .links-list,
+.top-links .links-list a {
+    color: white;
+}
+
+/* 分割线样式 */
+.cut {
+    height: 1px;
+    border-bottom: 1px solid #584D4D;
+}
+
+/* 使文字居中，但是块元素不可以直接使用text-align，所以需要对需要居中的内容转换为行内块 */
+.bottom-links {
+    text-align: center;
+}
+
+.bottom-links-list {
+    display: inline-block;
+}
+
+.bottom-links-list {
+    margin-top: 47px;
+}
+
+/* 设置每一个列表项的左浮动 */
+.bottom-links-list li {
+    float: left;
+}
+
+/* 设置文字颜色和大小 */
+.bottom-links-list li span, 
+.bottom-links-list li a {
+    color: white;
+    font-size: 14px;
+}
+
+.bottom-links-list li a {
+    padding: 0 26px;
+}
+
+/* 备案号 */
+.copyright {
+    color: white;
+}
+/* #endregion页脚区end */
