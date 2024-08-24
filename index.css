@@ -353,3 +353,22 @@
 }
 
 /* #endregion主要内容区end */
+
+/* #region秒杀区start */
+.seckill {
+    margin-top: 10px;
+    /* background-color: #666; */
+}
+
+/* 设置每一张图片样式 */
+.seckill img{
+    float: left;
+    margin-right: 10px;
+}
+
+/* 去掉最后一个图片的右边距 */
+.seckill img:last-child {
+    margin-right: 0;
+}
+/* #endregion秒杀区end */
+
