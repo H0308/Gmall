@@ -271,25 +271,32 @@
     width: 48px;
     /* background-color: aqua; */
     float: left;
+    /* 每一个列表项左右外边距为11 */
     margin:0 11px;
+    /* 文字水平居中 */
     text-align: center;
     color:black;
     font-weight: bold;
+    /* 鼠标为点击效果 */
     cursor: pointer;
 }
 
+/* 控制第二行的上下外边距 */
 .bottom-other-nav .other-list:nth-child(2) {
     margin: 17px 0;
 }
 
+/* 单独为每一行的第一个列表项设置左侧外边距 */
 .bottom-other-nav .other-list  li:first-child{
     margin-left: 16px;
 }
 
+/* 设置距离父元素的上外边距 */
 .bottom-other-nav .other-list:first-child {
     margin-top: 26px;
 }
 
+/* 设置背景图片 */
 .bottom-other-nav .other-list .picture {
     width: 48px;
     height: 48px;
