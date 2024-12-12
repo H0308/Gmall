@@ -1,555 +1,224 @@
-/* 版心设置 */
+/* 引入通用样式 */
 .container {
     width: 1190px;
     margin: 0 auto;
     font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-    /* background-color: orange; */
 }
 
-/* #region顶部导航条start */
-
-/* 设置导航条部分的主样式 */
-.topbar {
-    height: 30px;
-    line-height: 30px;
-    background-color: #ECECEC;
-    color: #666;
+/* 导航栏样式 */
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
-.welcome {
-    height: 30px;
-    font-size: 0; /* 清除内部字体之间的空格 */
+.nav-wrapper:hover {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* 设置内部所有字体的统一大小 */
-.welcome span, .welcome a {
-    font-size: 12px;
+/* Logo样式 */
+.logo {
+    padding: 15px 0;
 }
 
-/* 设置欢迎部分的右侧边距 */
-.welcome .greeting {
-    margin-right: 28px;
+.logo img {
+    height: 50px;
+    width: auto;
 }
 
-/* 设置登录和注册的样式 */
-.welcome .login {
-    padding-right: 10px;
-    /* border-right: 1px solid; */
+/* 导航链接样式 */
+.nav-links {
+    padding: 30px 0;
 }
 
-.welcome .register {
-    padding-left: 10px;
-}
-.topbar-nav {
-    height: 30px;
-}
-
-/* 每一个小列表项左侧浮动 */
-.topbar-nav .list li{
+.nav-links ul li {
     float: left;
+    margin-left: 40px;
 }
 
-/* 设置间距 */
-.topbar-nav .list li a {
-    padding-left: 15px;
-    padding-right: 15px;
-    /* border-right: 1px solid; */
-}
-
-/* 清除第一个列表项左侧边距和最后一个的右侧边距和边框 */
-.topbar-nav .list li:first-child a {
-    padding-left: 0;
-}
-
-.topbar-nav .list li:last-child a {
-    padding-right: 0;
-    /* border: 0; */
-}
-
-/* #endregion顶部导航条end */
-
-/* #region头部start */
-.header {
-    height: 120px;
-    /* background-color: aqua;  */
-}
-
-.search form {
-    font-size: 0;/* 此时不会影响子元素的默认样式 */
-    margin-top: 42px;
-}
-
-.search input {
-    width: 508px;
-    height: 34px;
-    border: 1px solid #DD302D;
-}
-
-.search button {
-    width: 80px;
-    height: 36px;
-    background-color: #DD302D;
-    vertical-align: top;
-    background-image: url('./images/search_icon.png');
-    background-repeat: no-repeat;
-    background-position: 28px 6px;
-}
-
-/* #endregion头部end */
-
-/* #region主导航区start */
-
-.main-nav {
-    height: 48px;
-    border-bottom: 1px solid #DD302D;
-}
-
-/* 全部商品分类主要样式 */
-.all-kinds {
-    width: 190px;
-    height: 48px;
-    line-height: 48px;
-    background-color: #DD302D;
-    color: white;
-    text-align: center;
+.nav-links ul li a {
     font-size: 16px;
-}
-
-/* 列表项部分主要样式 */
-.main-nav .every-list {
-    height: 48px;
-    line-height: 48px;
-    text-align: center;
-    font-size: 16px;
-}
-
-/* 每一个列表项左浮动 */
-.main-nav .every-list li {
-    float: left;
-}
-
-/* 每一个列表项的间距 */
-.main-nav .every-list li {
-    padding: 0px 10px;
-}
-
-/* #endregion主导航区end */
-
-/* #region主要内容区start */
-.main-content {
-    margin-top: 10px;
-}
-
-.main-content .sidebar {
-    width: 190px;
-    height: 458px;
-    background-color: #F4F4F4;
-    /* 使二级菜单以父亲作为包含块 */
+    color: #333;
+    transition: color 0.3s ease;
     position: relative;
 }
 
-.main-content .sidebar li {
-    height: 20px;
-    line-height: 20px;
-    font-size: 14px;
-    padding-left: 16px; /* 使用padding控制每一行左侧边距可以使鼠标悬浮时包含padding部分 */
-    margin-top: 8px; /* 使用margin控制每一行的间距可以使鼠标悬浮时不包含margin部分 */
+.nav-links ul li a:hover {
+    color: #DD302D;
 }
 
-.main-content .sidebar li:hover {
-    background-color: #DD302D;
-}
-
-
-/* 放置二级菜单的超链接被选中 */
-.main-content .sidebar li:hover>a {
-    color:white;
-}
-
-/* 悬浮在列表项时以块元素显示二级菜单 */
-.main-content .sidebar li:hover .second-menu{
-    display: block;
-}
-
-.sidebar .second-menu {
-    height: 458px;
-    width: 680px;
-    background-color: #F4F4F4;
-    /* 二级菜单开启绝对定位 */
+.nav-links ul li a::after {
+    content: '';
     position: absolute;
-    top: 0;
-    left: 190px;
-    /* 默认不显示二级菜单 */
-    display: none;  
-    font-size: 14px;
-    /* 整个内容区的左侧边距 */
-    padding-left: 20px;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #DD302D;
+    transition: width 0.3s ease;
 }
 
-.sidebar .second-menu dl {
-    height: 36px; /* 设置每一个dl的高度，宽度默认撑开父元素 */
-    line-height: 36px;
+.nav-links ul li a:hover::after {
+    width: 100%;
 }
 
-/* 单独设置第一个自定义列表的上边距 */
-.sidebar .second-menu dl:first-child {
-    margin-top: 10px;
+/* 主要内容区样式 */
+.main-content {
+    margin-top: 120px;
+    padding: 40px 0;
 }
 
-/* 设置每一个自定义列表的名词样式 */
-.sidebar .second-menu dt {
-    width: 70px;
-    height: 20px;
-    margin-right: 10px;
-    float: left;
-}
-
-.sidebar .second-menu dt span {
-    color: black;
-    font-weight: bold;
-}
-
-.sidebar .second-menu dd {
-    float: left;
-}
-
-.sidebar .second-menu dd a {
-    padding: 0 10px;
-    border-left: 1px solid;
-}
-
-.main-content .banner {
-    height:458px;
-    width: 690px;
-    margin: 0px 10px;
-    /* background-color: antiquewhite; */
-}
-
-.main-content .side-other {
-    height: 458px;
-    width: 290px;
-    /* background-color: antiquewhite; */
-}
-
-/* 上部分快报区 */
-.top-msg {
-    height: 156px;
-    width: 260px;
-    border: 1px solid #D9D9D9;
-    padding: 0 14px;
-}
-
-.top-msg .title {
-    height: 38px;
-    line-height: 38px;
-    border-bottom: 1px solid;
-}
-
-.top-msg .title h2 {
-    font-size: 14px;
-    color: black;
-    font-weight: bold;
-}
-
-/* 下部分资讯区 */
-.top-msg .info li {
-    height: 14px;
-    padding: 6px 0;
-}
-
-/* 下部分图标导航区 */
-.bottom-other-nav {
-    height: 290px;
-    width: 290px;
-    margin-top: 10px;
-    /* background-color: grey; */
-    overflow: hidden;
-}
-
-.bottom-other-nav .other-list li {
-    height: 70px;
-    width: 48px;
-    /* background-color: aqua; */
-    float: left;
-    /* 每一个列表项左右外边距为11 */
-    margin:0 11px;
-    /* 文字水平居中 */
+/* 欢迎文字样式 */
+.welcome-text {
     text-align: center;
-    color:black;
-    font-weight: bold;
-    /* 鼠标为点击效果 */
-    cursor: pointer;
+    margin-bottom: 60px;
 }
 
-/* 控制第二行的上下外边距 */
-.bottom-other-nav .other-list:nth-child(2) {
-    margin: 17px 0;
+.welcome-text h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-/* 单独为每一行的第一个列表项设置左侧外边距 */
-.bottom-other-nav .other-list  li:first-child{
-    margin-left: 16px;
+.welcome-text p {
+    font-size: 18px;
+    color: #666;
 }
 
-/* 设置距离父元素的上外边距 */
-.bottom-other-nav .other-list:first-child {
-    margin-top: 26px;
+/* 热门商品区域样式 */
+.featured-product {
+    padding: 40px;
+    background: #f8f8f8;
+    border-radius: 10px;
 }
 
-/* 设置背景图片 */
-.bottom-other-nav .other-list .picture {
-    width: 48px;
-    height: 48px;
-    background-image: url('./images/精灵图-侧边功能.png');
-}
-
-/* 第一行第一个 */
-.bottom-other-nav .other-list:nth-child(1) li:nth-child(1) .picture {
-    background-position: 0px 0px;
-}
-/* 第一行第二个 */
-.bottom-other-nav .other-list:nth-child(1) li:nth-child(2) .picture {
-    background-position: -48px 0px;
-}
-/* 第一行第三个 */
-.bottom-other-nav .other-list:nth-child(1) li:nth-child(3) .picture {
-    background-position: -96px 0px;
-}
-/* 第一行第四个 */
-.bottom-other-nav .other-list:nth-child(1) li:nth-child(4) .picture {
-    background-position: -144px 0px;
-}
-/* 第二行第一个 */
-.bottom-other-nav .other-list:nth-child(2) li:nth-child(1) .picture {
-    background-position: 0px -48px;
-}
-/* 第二行第二个 */
-.bottom-other-nav .other-list:nth-child(2) li:nth-child(2) .picture {
-    background-position: -48px -48px;
-}
-/* 第二行第三个 */
-.bottom-other-nav .other-list:nth-child(2) li:nth-child(3) .picture {
-    background-position: -96px -48px;
-}
-/* 第二行第四个 */
-.bottom-other-nav .other-list:nth-child(2) li:nth-child(4) .picture {
-    background-position: -144px -48px;
-}
-/* 第三行第一个 */
-.bottom-other-nav .other-list:nth-child(3) li:nth-child(1) .picture {
-    background-position: 0px -96px;
-}
-/* 第三行第二个 */
-.bottom-other-nav .other-list:nth-child(3) li:nth-child(2) .picture {
-    background-position: -48px -96px;
-}
-/* 第三行第三个 */
-.bottom-other-nav .other-list:nth-child(3) li:nth-child(3) .picture {
-    background-position: -96px -96px;
-}
-/* 第三行第四个 */
-.bottom-other-nav .other-list:nth-child(3) li:nth-child(4) .picture {
-    background-position: -144px -96px;
-}
-
-/* #endregion主要内容区end */
-
-/* #region秒杀区start */
-.seckill {
-    margin-top: 10px;
-    /* background-color: #666; */
-}
-
-/* 设置每一张图片样式 */
-.seckill img{
-    float: left;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-/* 去掉最后一个图片的右边距 */
-.seckill img:last-child {
-    margin-right: 0;
-}
-/* #endregion秒杀区end */
-
-/* #region楼区start */
-
-/* 顶部 */
-.floor-bar {
-    height: 30px; /* 文字所在位置高度，不是整个盒子高度 */
-    line-height: 30px;
-    margin-top: 48px;
-    border-bottom: 2px solid #DD302D;
-    padding-bottom: 4px;
-}
-
-.floor-bar .title {
-    font-size: 20px;
-    color:black;
-    font-weight: bold;
-}
-
-.floor-bar ul li{
-    font-size: 14px;
-    float: left;/* 使顶部每一个列表项左浮动 */
-}
-
-.floor-bar ul li a {
-    padding: 0 10px;
-}
-
-/* 取消第一个超链接的左边距 */
-.floor-bar ul li:first-child a {
-    padding-left: 0;
-}
-
-/* 底部 */
-.floor-list .item {
-    float: left;
-}
-
-/* 第一个广告区域 */
-.floor-list .item1 {
-    height: 392px;
-    width: 190px;
-    background-color: #F4F4F4;
-    text-align: center;
-    padding: 20px;
-}
-
-/* 设置整个列表的下边距 */
-.floor-list .item1 ul {
+.featured-product h2 {
+    font-size: 24px;
+    color: #333;
     margin-bottom: 30px;
 }
 
-/* 设置每一个列表项的样式 */
-.floor-list .item1 ul li {
+/* 商品卡片样式 */
+.product-card {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 40px;
+    width: 50%;
+}
+
+.product-info h3 {
+    font-size: 28px;
+    color: #DD302D;
+    margin-bottom: 20px;
+}
+
+.product-info p {
     font-size: 16px;
-    font-weight: bold;
-    width: 90px;
-    border-bottom: 1px solid #D9D9D9;
-    padding-bottom: 3.5px;
+    color: #666;
+    margin-bottom: 30px;
 }
 
-/* 设置奇数部分的左浮动 */
-.floor-list .item1 ul li:nth-child(2n - 1) {
-    float: left;
-}
-
-/* 设置偶数部分的右浮动 */
-.floor-list .item1 ul li:nth-child(2n) {
-    float: right;
-}
-
-/* 设置第二个的上下间距 */
-.floor-list .item1 ul li:nth-child(3),
-.floor-list .item1 ul li:nth-child(4){
-    margin: 14.4px 0;
-}
-
-/* 第二个广告区域 */
-.floor-list .item2 {
-    height: 432px;
-    width: 340px;
-    /* background-color: skyblue; */
-}
-
-/* 第三个广告区域 */
-.floor-list .item3 {
-    height: 430px;
-    width: 206px;
-    /* background-color: orange; */
-    border-right: 1px solid #ECECEC;
-}
-
-/* 第四个广告区域 */
-.floor-list .item4 {
-    height: 431px;
-    width: 206px;
-    /* background-color: greenyellow; */
-    border-right: 1px solid #ECECEC;
-}
-
-/* 第五个广告区域 */
-.floor-list .item5 {
-    height: 430px;
-    width: 206px;
-    /* background-color: purple; */
-}
-
-/* 设置出现底部边框的图片 */
-.floor-list .item3 img,
-.floor-list .item4 img, 
-.floor-list .item5 img {    
-    border-bottom: 1px solid #E2E2E2;
-}
-
-/* #endregion楼层区end */
-
-/* #region页脚区start */
-.footer {
-    height: 440px;
-    background-color: #483E3E;
-    margin-top: 49px;
-}
-
-/* 每一个列表样式 */
-.links-list{
-    width: 190px;
-    height: 176px;
-    float: left;
-    margin-top: 48px;
-    margin-bottom: 90px;
-}
-
-/* 每一个列表项样式 */
-.links-list li {
-    font-size: 14px;
-    margin: 5px 0;
-}
-.top-links .links-list,
-.top-links .links-list a {
-    color: white;
-}
-
-/* 分割线样式 */
-.cut {
-    height: 1px;
-    border-bottom: 1px solid #584D4D;
-}
-
-/* 使文字居中，但是块元素不可以直接使用text-align，对需要居中的内容转换为行内块 */
-.bottom-links {
-    text-align: center;
-}
-
-.bottom-links-list {
+.shop-now {
     display: inline-block;
-}
-
-.bottom-links-list {
-    margin-top: 47px;
-}
-
-/* 设置每一个列表项的左浮动 */
-.bottom-links-list li {
-    float: left;
-}
-
-/* 设置文字颜色和大小 */
-.bottom-links-list li span, 
-.bottom-links-list li a {
+    padding: 12px 30px;
+    background: #DD302D;
     color: white;
-    font-size: 14px;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background 0.3s ease;
 }
 
-.bottom-links-list li a {
-    padding: 0 26px;
-}
-
-/* 备案号 */
-.copyright {
+.shop-now:hover {
+    background: #c62828;
     color: white;
 }
-/* #endregion页脚区end */
+
+/* 图片墙样式 */
+.image-wall {
+    padding: 80px 0;
+    background: #f9f9f9;
+}
+
+.image-wall h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-10px);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0)
+    );
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.grid-item:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.overlay h3 {
+    font-size: 24px;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
